@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+		
+		
+            ['State', 'WOrkOrderQuantity'],
+			[ "Telangana" ,   11976737 ] ,
+			[ "Andhra Pradesh" ,   10374193 ] ,
+			[ "Meghalaya" ,   1442955 ] ,
+			[ "Assam" ,   4968340 ] ,
+			[ "Tripura" ,   1227738 ] ,
+			[ "Chattisgarh" ,   2767305 ] ,
+			[ "Jharkhand" ,   4910010 ] ,
+			[ "Mizoram" ,   1082935 ] ,
+			[ "Nagaland" ,   832160 ] ,
+			[ "Maharashtra" ,   18534240 ] ,
+			[ "Sikkim" ,   890087 ] ,
+			[ "Rajasthan" ,   6323025 ] ,
+			[ "Madhya Pradesh" ,   3841560 ] ,
+			[ "Jammu and Kashmir" ,   1838725 ] ,
+			[ "Karnataka" ,   10836726 ] ,
+			[ "Ladakh" ,   80600 ] ,
+			[ "Punjab" ,   2977985 ] ,
+			[ "Tamil Nadu" ,   6454725 ] ,
+			[ "Uttar Pradesh" ,   13851644 ] ,
+			[ "West Bengal" ,   15869120 ] ,
+			[ "Gujarat" ,   4815270 ] ,
+			[ "Bihar" ,   9563210 ] ,
+			[ "Haryana" ,   4263075 ] ,
+			[ "Chandigarh" ,   741370 ] ,
+			[ "Delhi" ,   2577835 ] ,
+			[ "Manipur" ,   844640 ] ,
+			[ "Uttarakhand" ,   2467668 ] ,
+			[ "Kerala" ,   4603940 ] ,
+			[ "Himachal Pradesh" ,   783600 ] ,
+			[ "Arunachal Pradesh" ,   343200 ] ,
+			[ "Dadra and nagar Haveli" ,   195860 ] ,
+			[ "Odisha" ,   7527827 ] ,
+			[ "Goa" ,   1538391 ] ,
+			[ "Puducherry" ,   25000 ] ,
+			[ "Andaman and Nicobar Islands" ,   168550 ] ,
+			[ "Daman and Diu" ,   66000 ] 
+		  
+        ]);
+
+        var options = {
+			region: 'IN',
+		    displayMode: 'regions',
+			resolution: 'provinces',
+			width: 640*1.5-100, 
+			height: 480*1.5};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+	<Center>
+		<h1> Total in progress Work Order Quantity by State <h1>
+		<div id="regions_div" style="width: 900px; height: 500px;"></div>
+	</Center>
+  </body>
+</html>
